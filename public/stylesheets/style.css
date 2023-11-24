@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(255, 236, 167);
+  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#generatedURL {
+  color: brown;
+}
+
+h1 {
+  color: #51221f
+}
+
+#shorten-button {
+  background-color: brown;
+  color: wheat;
+}

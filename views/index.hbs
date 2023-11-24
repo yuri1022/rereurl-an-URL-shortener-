@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="title d-flex justify-content-center mb-5">
     <h1>
-      URL_Shortener
+      URL_Shortener<span> </span><i class="fa-regular fa-file fa-bounce" style="color: #51221f;"></i>
     </h1>
   </div>
   <div class="picture d-flex justify-content-center mb-5" id="picture">
@@ -11,12 +11,21 @@
   {{#if shortURL}}
   <div class="d-flex justify-content-center align-items-center flex-column">
     <div class="result mb-3">
-      <h3>Success! Please use this link:</h3>
-      <a href='http://localhost:3000/{{shortURL}}' id="generatedURL"
-        target="_blank">http://localhost:3000/{{shortURL}}</a>
+      <h3>Your Shorten URL is:</h3>
+      <button type="button" class="copy mb-3 btn btn-warning">
+        <a href='http://localhost:3000/{{shortURL}}' id="generatedURL"
+          target="_blank">http://localhost:3000/{{shortURL}}</a>
+      </button>
+
+      <button class="copy mb-3 btn btn-sm" onclick="copy()"><i class="fa-solid fa-copy fa-2xl"
+          style="color: #51221f;"></i></button>
+      <button class="copy mb-3 btn btn-sm">
+        <a href="http://localhost:3000/">
+          <i class="fa-solid fa-house fa-2xl" style="color: #51221f;"></i>
+        </a>
+      </button>
+
     </div>
-    <button class="copy mb-3 btn btn-primary" onclick="copy()">Copy</button>
-    <a href="http://localhost:3000/"> home </a>
 
     <script>
       function copy() {
@@ -30,13 +39,16 @@
 
   {{else}}
   <div id="'submit-bar" class="d-flex justify-content-center">
+
     <form class="d-flex justify-content-center flex-column form" action="/shorten" method="POST">
       <div class="mb-3">
-        <input type="url" class="form-control mb-1" name="inputURL" placeholder="Input URL here"
+
+        <input type="url" class="form-control mb-1" name="inputURL" placeholder="Input Your URL here"
           aria-describedby="shorten-button" required>
+        <button type="submit" class="btn btn-sm" id="shorten-button">Shorten</button>
       </div>
-      <button type="submit" class="btn btn-primary" id="shorten-button">Shorten</button>
     </form>
+
   </div>
   {{/if}}
 </div>

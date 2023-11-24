@@ -64,7 +64,7 @@ app.get('/:shortURL', (req, res) => {
   if (originalURL) {
     res.redirect(originalURL);
   } else {
-    res.status(404).send('短網址未找到');
+    res.status(404).send('未找到短網址');
   }
 });
 
